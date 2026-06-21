@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodesk IT | Smart Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">Prodesk <span>IT</span></h2>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Building Smart Digital Solutions For Modern Business</h1>
+            <p>
+                We help startups and enterprises scale with modern technology,
+                cloud systems and digital transformation.
+            </p>
+            <a href="#contact" class="cta-btn">Start Project</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Modern fast websites for businesses tailored for high-growth scalability.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful user friendly interfaces that deliver seamless digital experiences.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+                <h3>Cloud Solutions</h3>
+                <p>Secure scalable cloud infrastructure to optimize standard workflows.</p>
+            </div>
+        </div> 
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Prodesk IT</h2>
+        <p>
+            Prodesk IT helps businesses grow through web development,
+            cloud technology and digital transformation solutions. Our commitment is delivering robust engineering architecture with zero compromise on visual fidelity.
+        </p>
+    </section>
+
+    <section id="contact" class="contact">
+       <h2>Contact Us</h2>
+       <div class="form-wrapper">
+           <input type="text" placeholder="Your Name" required>
+           <input type="email" placeholder="Your Email" required>
+           <textarea placeholder="Your Message" required></textarea>
+           <button class="submit-btn">Send Message</button>
+       </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Prodesk IT. All Rights Reserved.</p>
+      <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </footer>
+
+    <script>
+        // 1. Sticky Navigation Protocol
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // 2. Responsive Hamburger Menu Logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-xmark');
+        });
+
+        // 3. Phase 2: Light/Dark Mode Logic
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const icon = themeToggle.querySelector('i');
+            if(document.body.classList.contains('dark-theme')) {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+            }
+        });
+    </script>
+</body>
+</html>
